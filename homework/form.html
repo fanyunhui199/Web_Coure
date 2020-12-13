@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* 容器 */
+        .main {
+            border: 1px solid #ff0000;
+            padding: 15px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .form-group{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .form-label{
+
+            width: 20%;
+            text-align: right;
+            padding: 8px;
+        }
+
+        .form-input{
+           width: 80%;
+        }
+
+         input[type=password]{
+             border: 1px solid #888888;/*得给边框加线*/
+             border-radius:5px;
+             box-shadow: 2px 2px 3px #888888;
+             padding: 12px 20px;
+             margin: 8px 0;
+             width: 100%;
+        }
+
+        input[type=text]{
+             border: 1px solid #888888;/*得给边框加线*/
+             border-radius:5px;
+             box-shadow: 2px 2px 3px #888888;
+             padding: 12px 20px;
+             margin: 8px 0;
+             width: 100%;
+         }
+
+        input[type="radio"]{
+
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+
+        input [type=password]:focus {
+            /* 当获取焦点时，下边线变色 */
+             border: 1px solid #888888;/*得给边框加线*/
+
+        }
+
+        input [type=text]:focus {
+            /* 当获取焦点时，下边线变色 */
+            border: 1px solid #888888;/*得给边框加线*/
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <form>
+        <div class="form-group">
+            <label class="form-label">用户名</label>
+            <div class="form-input">
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">密码</label>
+            <div class="form-input">
+                <input type="password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">性别</label>
+            <div class="form-input">
+                <input type="radio" name="sex">男
+                <input type="radio" name="sex">女
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

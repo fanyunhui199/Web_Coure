@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .fab{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+        }
+
+        .fab:hover{
+            cursor: pointer;
+        }
+
+        .fab-btn i{
+            height: 80px;
+            width: 80px;
+            transition: transform 2.0s;/*过渡时间*/
+        }
+
+
+
+        .fab:hover .fab-btn i{
+
+            -webkit-transform: rotate(180deg);
+            /*浏览器兼容性的问题 要加个开头*/
+        }
+
+        .fab-menu{
+
+            display: none;
+
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+            text-align: center;
+        }
+
+        .fab .fab-btn .material-icons{
+            font-size: 80px;
+            color: deepskyblue;
+            display: inline-block;
+        }
+
+        .fab .fab-menu .material-icons{
+            font-size: 50px;
+            color: deepskyblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="fab">
+    <div class="fab-btn">
+       <i class="material-icons">account_circle</i>
+    </div>
+
+    <div class="fab-menu">
+        <ul class="fab-menu-ul">
+            <li><i class="material-icons">photo_camera</i></li>
+            <li><i class="material-icons">print</i></li>
+            <li><i class="material-icons">phone</i></li>
+            <li><i class="material-icons" style="color: red">sentiment_dissatisfied</i></li>
+        </ul>
+    </div>
+
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script >
+    $(document).ready(function(){
+        $(".fab").hover(function() {
+            $(".fab-menu").fadeIn();
+
+            $(this).children(".fab-btn").find("i").text("remove");
+
+        }, function () {
+            $(".fab-menu").fadeOut();
+            $(this).children(".fab-btn").find("i").text("account_circle");
+        })
+});
+</script>
+</body>
+</html>
