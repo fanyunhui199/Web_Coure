@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .modal{
+            background-color: rgb(255, 255, 255,0.95);
+            position: absolute;
+            display:flex ;
+            flex-direction: column;
+            left: 50%;
+            top: 200px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px #888888;
+            transform: translate(-50%, -50%);/*居中*/
+        }
+
+        .modal .modal-dialog{
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal .modal-header{
+            padding: 20px;
+            border-bottom: 1px solid black;
+        }
+
+
+        .modal .modal-title{
+            font-size: 50px;
+        }
+
+        .modal .modal-body{
+            font-size: 30px;
+            padding: 20px;
+            border-bottom: 1px solid black;
+        }
+        .modal .modal-footer{
+            padding: 18px;
+
+        }
+
+        .modal .btn-secondary{
+            width: 90px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        .modal  .btn-primary{
+            width: 180px;
+            height: 40px;
+            font-size: 20px;
+            background-color: dodgerblue;
+            margin-left: 40px;
+        }
+
+        .content{
+            font-size: 35px;
+        }
+
+        .text button{
+            height: 80px;
+            width: 250px;
+            font-size: 40px;
+            background-color: cornflowerblue;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="text">
+    <p class="content">But, in a larger sense, we can not dedicate -- we can not consecrate --
+        we can not hallow -- this ground. The brave men, living and dead,
+        who struggled here, have consecrated it, far above our poor power
+        to add or detract. The world will little note, nor long remember
+        what we say here, but it can never forget what they did here.
+        It is for us the living, rather, to be dedicated here to the unfinished
+        work which they who fought here have thus far so nobly advanced.
+        It is rather for us to be here dedicated to the great task remaining
+        before us -- that from these honored dead we take increased devotion
+        to that cause for which they gave the last full measure of devotion --
+        that we here highly resolve that these dead shall not have died in vain --
+        that this nation, under God, shall have a new birth of freedom --
+        and that government of the people, by the people, for the people, shall not perish from the earth.
+    </p>
+    <button type="button">Learn more</button>
+</div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                </div>
+
+                <div class="modal-body">
+                    <p>别看了，什么也没有，学习太难了呜呜呜</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //默认为隐藏
+        $(".modal").hide();
+        //事件触发
+        $(".text button").click(function(){
+            $(".modal").fadeIn();
+
+            //点击框外即消失
+            $(document).bind("click",function(e){
+                //id为menu的是菜单，id为open的是打开菜单的按钮
+                if($(e.target).closest(".modal").length == 0 && $(e.target).closest(".text button").length == 0){
+                    //点击id为.modal之外且id不是button，则触发
+                    $(".modal").fadeOut();
+                }
+            });
+
+            //点击close关闭
+            $(".modal .btn-secondary").click(function(){
+                $(".modal").fadeOut();
+            });
+
+        });
+
+    });
+</script>
+
+</body>
+</html>
